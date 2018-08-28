@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+\title{}
+\author{Adam Fiedler}
+\date{August 6, 2018}
+
+\begin{document}
+
+\maketitle
+
+Let $n$ be the number of straight lines, which are not parallel to each other and no three meet in one point. 
+
+Then the plane is divided by them into $\frac{n (n + 1)}{2} + 1$ parts.
+
+\begin{proof}
+
+We'll prove this proposition using mathematical induction.
+
+It is obvious that it holds for $n = 0$ straight lines, because indeed the plane is then divided into $\frac{0 (1)}{2} + 1 = 1$ part, the plane itself. 
+
+Suppose it holds for some $n$, then if true, it must hold for $n + 1$ as well. Let $p$ be the number of parts added with one added line. Then following the inductive premise:
+
+\[ \frac{(n + 1) ((n + 1) + 1)}{2} + 1 = \frac{n (n + 1)}{2} + 1 + p \]
+
+For $p$, we shall make use of the premise that the lines are not parallel: this must mean that each one will meet all the other ones at some point, moreover, only at one such point.
+
+The important thing to consider is that a new, $n+1$-th line will always keep the past parts untouched. It can only make more parts because it always splits a (sub)plane into two subplanes. 
+
+Assume that one of these two subplanes keeps the number of past subplanes. The other then will necessarily be divided by the other $n$ lines, thus $p = n + 1$ and then 
+
+\[ \frac{n (n + 1)}{2} + (n + 1) + 1 = \frac{n (n + 1) + 2 (n+1)}{2} + 1 = \frac{(n + 1)(n + 2)}{2} + 1 \]
+
+\end{proof}
+
+\end{document}
