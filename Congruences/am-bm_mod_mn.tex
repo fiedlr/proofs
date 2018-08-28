@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\title{}
+\author{Adam Fiedler}
+
+\begin{document}
+
+\maketitle
+
+Let $m, n \in \mathbb{N}$ and $a, b \in \mathbb{Z}$. Then
+
+\[ a \equiv b \text{ (mod $m^n$)} \implies a^m \equiv b^m \text{ (mod $m^{n+1}$)}  \]
+
+\begin{proof}
+
+What we want actually to prove is just this. Supposing $m^n \mid a - b$, then also $m^{n+1} \mid a^m - b^m$. The reader can verify for herself that $a - b$ can be factored out of $a^m - b^m$ as follows:
+
+\[ a^m - b^m = (a - b) \cdot P(a, b) \]
+
+where $P(a, b)$ is a polynomial expression containing $a, b$:
+
+\[ P(a, b) = a^{m-1} + a^{m-2}b + ... + ab^{m-2} + b^{m-1}  \]
+
+From our premise we know that $m^n \mid a - b$, therefore we only have to show that $m \mid P(a, b)$. This is because it would mean that $a^m - b^m$ is a product of multiples of $m^n$ and $m$, in other words, dividible by $m^{n+1}$.
+
+Consider that the supposed congruence by definition also tells us $a, b$ gives the same remainder after being divided by $m$. Hence $a = km^n + r$ and $b = lm^n + r$ for some $k, l \in \mathbb{Z}$ and $r \in \mathbb{N}$. 
+
+Thus we can factor out $m$ out of every member of $P$ besides $r^{m-1}$, which is obviously present in $P$ exactly $m$ times. Therefore for some $l, k \in \mathbb{Z}$ holds:
+
+\[ P(a, b) = m \cdot l + m \cdot r^{m-1} = m \cdot k \]
+
+\end{proof}
+
+\end{document}
