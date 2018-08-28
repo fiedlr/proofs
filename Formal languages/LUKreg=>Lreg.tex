@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\title{}
+\author{Adam Fiedler}
+
+\begin{document}
+
+\maketitle
+
+We shall want to prove using $\sim_L$ that given any two languages $L, K$ over any finite alphabet, while supposing $K$ is finite (i.e. $K$ contains a finite number of words), the following holds:
+
+\[L \cup K \text{ is regular} \implies L \text{ is regular}\]
+
+\begin{proof}
+
+Let's prove the contrapositive of the statement.
+
+Suppose that $L$ is not regular, from \emph{Myhill-Nerod theorem} then follows that $\sim_L$ has an infinite index. In other words, there is an infinite number of different words over the given alphabet such that they are not equivalent in terms of $\sim_L$. Let's call this set of words $M$.\\
+
+We know that $K$ is finite and without loss of generality, let's suppose it is nonempty (otherwise the theorem would be trivial to prove). From this follows there must exist a word $w \in K$ such that $(\forall k \in K)(|k| \leq |w|)$.\\ 
+
+Consider the nonempty subset of $M \supseteq N = \{\forall m \in M: |m| > |w|\}$. All words in $N$ clearly are not member of $K$ whether we extend them with any suffix or not (the suffix used will be $\epsilon$), hence from the definition of $\sim_{L \cup K}$ for all $u, v \in N$ holds that $u \sim_{L \cup K} v \iff u \sim_{L} v$.\newline.
+
+However, we've supposed that $u \not\sim_L v$ for $u \neq v$ because $L$ is not regular. This means we've found a countably infinite set of words $N$, which are not equivalent in terms of $\sim_{L \cup K}$, therefore $L \cup K$ is not regular.
+
+\end{proof}
+
+\end{document}
