@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\title{}
+\author{Adam Fiedler}
+
+\begin{document}
+
+\maketitle
+
+Let $c \in \mathbb{N}$, $\Sigma$ is any finite alphabet, $L = \{w \in \Sigma^*: |w| = ck \mid k \in \mathbb{N}\}, K = \{w \in \Sigma^*: |w| \geq c\}$. Then the following holds:
+
+\[L \text{ is regular} \implies K \text{ is regular}\]
+
+\begin{proof}
+For $c = 1$ the proof is trivial ($L = K$). For $c > 1$ let us call the languages of remainder classes modulo $c$ as $L_{0}$, $L_{1}$, ..., $L_{c-1}$. We shall thus consider a system of languages $L_i = \{w \in \Sigma^*: |w| = ck + i \mid k \in \mathbb{N}\} \subset K$, where $i \in I = \{0, 1, ..., c-1\} \subset \mathbb{N}_0$. $K$ can then be written as:
+
+\[ K = \bigcup\limits_{i \in I} L_{i} \]
+
+\noindent Moreover the following lemma holds for all $m, n \in I, m \leq n$:
+
+\[ L_m\text{ is regular} \implies L_n\text{ is regular} \]
+
+\noindent This can be easily shown because we know that the class of regular languages is closed under concatenation and clearly $L_m \cdot \Sigma^{n - m} = L_n$.\newline
+
+Finally, based on the premise about the regularity of $L = L_0$, from the aforementioned lemma follows that languages $L_i$ are regular. And because we know that regular languages are closed under union, hence also the big union $K$ is regular.
+
+\end{proof}
+
+\end{document}
