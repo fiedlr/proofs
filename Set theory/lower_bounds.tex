@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+\title{}
+\author{Adam Fiedler}
+\date{August 1, 2018}
+
+\begin{document}
+
+\maketitle
+
+\[\text{Let } x \in \mathbb{R} \text{ so that } x > 0.\text{ Then } \floor*{\sqrt{x}} = \floor*{\sqrt{\floor*{x}}}. \]
+
+\begin{proof}
+
+Let us suppose for a contradiction that the proposition is not true. In other words $x \in \mathbb{R} > 0$ and
+
+\[ \floor*{\sqrt{x}} \neq \floor*{\sqrt{\floor*{x}}} \] 
+
+Consider that this really holds if and only if
+
+\[ | \sqrt{x} - \sqrt{\floor*{x}} | \geq 1 \]
+
+because, intuitively, if the difference between the two numbers was lower than 1, flooring them would \emph{cancel it out}. However, from this automatically follows that the inequality will surely hold also for their squares: after multiplying the inequality with $| \sqrt{x} + \sqrt{\floor*{x}} |$ we get
+
+\[ | x - \floor*{x} | \geq | \sqrt{x} + \sqrt{\floor*{x}} | \]
+
+and since $| \sqrt{x} - \sqrt{\floor*{x}} | \geq 1$, clearly $| \sqrt{x} + \sqrt{\floor*{x}} | \geq 1$. Thus
+
+\[ | x - \floor*{x} | \geq 1 \]
+
+which is a contradiction with the definition of $\floor*{x}$.
+
+
+\end{proof}
+
+\end{document}

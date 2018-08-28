@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\title{}
+\author{Adam Fiedler}
+
+\begin{document}
+
+\maketitle
+
+\[ X = Y \iff 2^X = 2^Y \]
+
+\begin{proof}
+
+We will prove the proposition by proving both implications.
+
+\begin{enumerate}
+
+\item $\Rightarrow$ Trivial.
+
+\item $\Leftarrow$
+
+Suppose $2^X = 2^Y$. This means that for every subset $Z \subseteq X$ holds it is also a subset of $Y$ and vice versa ($\forall Z . Z \subseteq X \iff Z \subseteq Y$). But that must especially apply when we set $Z = X$ because $X$ is a subset of itself, so clearly $X \subseteq Y$. For the same reason when we set $Z = Y$, it right follows that $Y \subseteq X$. Thus $X = Y$.
+
+\end{enumerate}
+
+\end{proof}
+
+\end{document}
