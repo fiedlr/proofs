@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\title{}
+\author{Adam Fiedler}
+
+\begin{document}
+
+\maketitle
+
+Let $f, g : \mathbb{N} \rightarrow \mathbb{N}$ and $f \in \mathcal{O}(g)$. Then
+
+\[ \mathcal{O}(f) \subseteq \mathcal{O}(g). \]
+
+\begin{proof}
+
+Suppose that $f \in \mathcal{O}(g)$, therefore by definition exists $n_0, c_0 \in \mathbb{N}$ such that for all $n \geq n_0 \in \mathbb{N}$ holds 
+
+\[f(n) \leq c_0 * g(n).\]
+
+From this assumption follows that for some $c_1, n_1 \in \mathbb{N}$ and all $n \geq n_0 + n_1$ must hold
+
+\[ \mathcal{O}(f) = \{ h \mid h(n) \leq c_1 * f(n) \leq c_1 * (c_0 * g(n)) \}. \]
+
+Now let us consider any $h \in \mathcal{O}(f)$, then we know from the above proposition about $\mathcal{O}(f)$ that there exists $c', n' \in \mathbb{N}$ such that for all $n \geq n'$ holds
+
+\[ h(n) \leq c' * g(n), \]
+
+\noindent namely $c' = c_1 * c_0$ and $n' = n_0 + n_1$. But this means by definition that $h \in \mathcal{O}(g)$, therefore $\mathcal{O}(f) \subseteq \mathcal{O}(g)$.
+
+\end{proof}
+
+\end{document}
