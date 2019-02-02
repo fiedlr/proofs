@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\title{}
+\author{Adam Fiedler}
+
+\begin{document}
+
+\maketitle
+
+Let us look at a nice proposition called \textit{Leibniz equality}:
+
+\[ x = y \iff \forall P . (P(x) \iff P(y)), \]
+
+\noindent where $P$ is a \emph{predicate}. If we do not take it as the definition of equality itself, it can be proven using the usual laws of logic and a little trick.
+
+\begin{proof}
+We shall prove it by proving both implications.
+\begin{enumerate}
+  \item ($\Rightarrow$) Trivial.
+  \item ($\Leftarrow$) If every predicate holds for $x$ if and only if it holds for $y$, then specifically this must apply also if we set $P$ to the \emph{equality test with x} ($P := (= x)$). Trivially $x = x$, using the assumption therefore $y = x$. Equality being symmetric, from this follows $x = y$.
+\end{enumerate}
+
+\end{proof}
+
+\end{document}
