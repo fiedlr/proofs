@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[shortlabels]{enumitem}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\title{}
+\author{Adam Fiedler}
+
+\begin{document}
+
+\maketitle
+
+Let $\Sigma = \{\mathbf{0}, \mathbf{1}, \mathbf{2}, \mathbf{3}, \mathbf{4}, \ldots, \mathbf{9}\}$ and $\mathbf{R} = \Sigma^\omega$, then:
+
+\[ | \mathbf{R} | = | \mathbb{R} |. \]
+
+\begin{proof}
+We know that $|\mathbb{R}| = |[0, 1)|$, therefore it is sufficient to prove $| [0, 1) | = | \mathbf{R} |$.
+Let us consider the function $f : [0, 1) \to \mathbf{R}$ defined as follows
+
+\[f(0.x_0x_1x_2x_3\ldots) = t(x_0)t(x_1)t(x_2)t(x_3)\ldots\]
+
+\noindent where $t(0) = \mathbf{0}, t(1) = \mathbf{1}, \ldots, t(9) = \mathbf{9}$. Then $f$ is a \emph{bijection} because 
+
+\begin{enumerate}[a)]
+\item $f$ is injective. This is obvious.
+\item $f$ is surjective. 
+We can prove by contradiction. 
+Suppose that there is such $y = a_0a_1a_2\ldots \in \mathbf{R}$ that there is no $x \in [0, 1)$ satisfying $f(x) = y$. 
+By definition of $f$, this can only be for some $a_i \in \Sigma$ such that for no $z$ holds $t(z) = a_i$. 
+However, this is in contradiction with $range(t) = \Sigma$.
+\end{enumerate}
+
+\end{proof}
+\end{document}
